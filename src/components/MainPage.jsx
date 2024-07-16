@@ -18,8 +18,8 @@ const MainPage = () => {
         const newTask = {
             name: taskName,
             member: memberName,
-            start: startTime,
-            end: endTime,
+            start: startTime, 
+            end: endTime, 
             status: 'incomplete',
         };
         const updatedTasks = [...tasks, newTask];
@@ -27,6 +27,7 @@ const MainPage = () => {
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
         resetModal();
     };
+    
 
     const resetModal = () => {
         setIsModalOpen(false);
@@ -68,58 +69,59 @@ const MainPage = () => {
             </button>
 
             {isModalOpen && (
-                <div className="modal">
-                    <h2>Create Task</h2>
-                    <input
-                        type="text"
-                        placeholder="Task Name"
-                        value={taskName}
-                        onChange={(e) => setTaskName(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Member Name"
-                        value={memberName}
-                        onChange={(e) => setMemberName(e.target.value)}
-                    />
-                    <input
-                        type="time"
-                        placeholder="Start Time"
-                        value={startTime}
-                        onChange={(e) => setStartTime(e.target.value)}
-                    />
-                    <input
-                        type="time"
-                        placeholder="End Time"
-                        value={endTime}
-                        onChange={(e) => setEndTime(e.target.value)}
-                    />
-                    <button onClick={handleCreateTask}>Create</button>
-                    <button onClick={resetModal}>Cancel</button>
-                </div>
-            )}
+    <div className="modal">
+        <h2>Create Task</h2>
+        <input
+            type="text"
+            placeholder="Task Name"
+            value={taskName}
+            onChange={(e) => setTaskName(e.target.value)}
+        />
+        <input
+            type="text"
+            placeholder="Member Name"
+            value={memberName}
+            onChange={(e) => setMemberName(e.target.value)}
+        />
+        <input
+            type="date" 
+            placeholder="Start Date"
+            value={startTime}
+            onChange={(e) => setStartTime(e.target.value)}
+        />
+        <input
+            type="date"
+            placeholder="End Date"
+            value={endTime}
+            onChange={(e) => setEndTime(e.target.value)}
+        />
+        <button onClick={handleCreateTask}>Create</button>
+        <button onClick={resetModal}>Cancel</button>
+    </div>
+)}
 
-            {selectedTask && (
-                <div className="modal task-details">
-                    <h3>Task Details</h3>
-                    <p>Task Name: {selectedTask.name}</p>
-                    <p>Member Name: {selectedTask.member}</p>
-                    <p>Time Started: {selectedTask.start}</p>
-                    <p>Time to Finish: {selectedTask.end}</p>
-                    <select value={status} onChange={(e) => setStatus(e.target.value)}>
-                        <option value="incomplete">Incomplete</option>
-                        <option value="in progress">In Progress</option>
-                        <option value="ready to be tested">Ready to be Tested</option>
-                        <option value="tested">Tested</option>
-                        <option value="completed">Completed</option>
-                    </select>
-                    <button onClick={() => handleStatusChange(status)}>Done</button>
-                    <button onClick={() => setSelectedTask(null)}>Close</button>
-                    <button onClick={() => handleDeleteTask(selectedTask.name)} className="delete-button">
-                        Delete Task
-                    </button>
-                </div>
-            )}
+{selectedTask && (
+    <div className="modal task-details">
+        <h3>Task Details</h3>
+        <p>Task Name: {selectedTask.name}</p>
+        <p>Member Name: {selectedTask.member}</p>
+        <p>Time Started: {selectedTask.start}</p>
+        <p>Time to Finish: {selectedTask.end}</p>
+        <select value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="incomplete">Incomplete</option>
+            <option value="in progress">In Progress</option>
+            <option value="ready to be tested">Ready to be Tested</option>
+            <option value="tested">Tested</option>
+            <option value="completed">Completed</option>
+        </select>
+        <button onClick={() => handleStatusChange(status)}>Done</button>
+        <button onClick={() => setSelectedTask(null)}>Close</button>
+        <button onClick={() => handleDeleteTask(selectedTask.name)} className="delete-button">
+            Delete Task
+        </button>
+    </div>
+)}
+
 
             <div className="sentence">
                 <h1>Each completed task is a victory—let's celebrate the journey!</h1>

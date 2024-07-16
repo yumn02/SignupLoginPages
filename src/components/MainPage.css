@@ -1,43 +1,50 @@
 .main-container {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between; /* Spread columns across the container */
+    justify-content: space-between; 
     margin-top: 20px;
 }
 
 .column {
-    flex: 1; /* Equal width for all columns */
-    margin: 0 10px; /* Space between columns */
-    background-color: #d8caca; /* Light background for columns */
+    flex: 1; 
+    margin: 0 10px; 
+    background-color: #184e74; 
     padding: 10px;
     border-radius: 5px;
     position: relative;
+    border: 3px solid #000;
 }
 
-.column:not(:last-child) {
-    border-right: 2px solid #000; /* Vertical line between columns */
-}
+.column:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -16px;
+    width: 7px; 
+    height: 900px; 
+    background-color: #000;
 
+}
 .tasks {
-    margin-top: 10px; /* Space above tasks */
+    margin-top: 10px; 
 }
 
 .task {
     background-color: #e7e7e7;
     padding: 10px;
-    margin: 5px 0; /* Space between tasks */
+    margin: 5px 0; 
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 .task:hover {
-    background-color: #d8caca; /* Change color on hover */
+    background-color: #d8caca; 
 }
 
 .sentence {
     display: flex;
-    justify-content: center; /* Center the sentence */
+    justify-content: center; 
     margin-top: 30px;
     margin-bottom: 20px;
     color: rgb(54, 36, 37);
@@ -110,9 +117,9 @@
 }
 
 .delete-button {
-    margin-top: 10px; /* Space between other buttons and delete button */
+    margin-top: 10px; 
     padding: 5px 10px;
-    background-color: #f44336; /* Red */
+    background-color: #f44336; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -120,5 +127,5 @@
 }
 
 .delete-button:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: #d32f2f; 
 }

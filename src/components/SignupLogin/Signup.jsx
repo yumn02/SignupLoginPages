@@ -12,8 +12,6 @@ const Signup = () => {
       alert('Please enter a valid email');
       return;
     }
-
-    // Password validation
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!passwordRegex.test(password)) {
       alert('Password must be at least 8 characters long, contain at least one uppercase letter and one number.');

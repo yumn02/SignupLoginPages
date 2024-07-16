@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Signup from './components/SignupLogin/Signup';
 import Login from './components/SignupLogin/Login';
-import MainPage from './components/MainPage'; // Remove curly braces
+import MainPage from './components/MainPage';
 function App() {
   return (
     <Router>

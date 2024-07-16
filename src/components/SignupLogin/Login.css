@@ -3,7 +3,7 @@
     flex-direction: column;
     margin: 400px;
     margin-top: 200px;
-    background: linear-gradient(#cebbbb,#ae9b9b);
+    background: linear-gradient(#d3e4f1,#d7e2eb);
     padding-bottom: 30px;
     }
     
@@ -14,7 +14,7 @@
     gap: 9px;
     width: 100%;
     margin-top: 30px;
-    color: #604444;
+    color: #000000;
     font-size: 48px;
     font-weight: 700;
     }
@@ -31,10 +31,10 @@
         margin: auto;
         width: 500px;
         height: 80px;
-        background: #dacece;
+        background: #f7f3f3;
         border-radius: 6px;
         font-weight: 700;
-        color: #7c6262;
+        color: #000000;
     }
     
     .input input{
@@ -42,7 +42,7 @@
         width: 400px;
         margin: auto;
         border: none;
-        color: rgb(124, 87, 87);
+        color: rgb(0, 0, 0);
         font-size: 15px;
         font-weight: 500;
     }
@@ -58,8 +58,8 @@
         align-items: center;
         width: 220px;
         height: 59px;
-        background: #604444;
-        color: #dacece;
+        background: #2b4b96;
+        color: #faf3f3;
         border-radius: 50px;
         font-size: 19px;
         font-weight: 700;
@@ -69,14 +69,14 @@
     .underline{
         width: 180px;
         height: 7px;
-        background: #604444;
+        background: #000000;
         border-radius: 9px;
         margin-bottom: 40px;
     }
     .redirect{
         padding-left: 62px;
         margin-top: 27px;
-        color: #604444;
+        color: #000000;
         font-size: 18px;
         font-weight: 800;
     }
