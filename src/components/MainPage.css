@@ -1,0 +1,124 @@
+.main-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; /* Spread columns across the container */
+    margin-top: 20px;
+}
+
+.column {
+    flex: 1; /* Equal width for all columns */
+    margin: 0 10px; /* Space between columns */
+    background-color: #d8caca; /* Light background for columns */
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.column:not(:last-child) {
+    border-right: 2px solid #000; /* Vertical line between columns */
+}
+
+.tasks {
+    margin-top: 10px; /* Space above tasks */
+}
+
+.task {
+    background-color: #e7e7e7;
+    padding: 10px;
+    margin: 5px 0; /* Space between tasks */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.task:hover {
+    background-color: #d8caca; /* Change color on hover */
+}
+
+.sentence {
+    display: flex;
+    justify-content: center; /* Center the sentence */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: rgb(54, 36, 37);
+}
+
+.create-task-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #e7e7e7; 
+    color: rgb(54, 36, 37);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 19px;
+}
+
+.create-task-button:hover {
+    background-color: #e5c8c8;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+}
+
+.modal h2 {
+    text-align: center;
+}
+
+.modal input,
+.modal select {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal button {
+    margin: 10px auto;
+    padding: 10px;
+    cursor: pointer;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    display: block;
+}
+
+.task-details {
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    position: absolute;
+    z-index: 999;
+}
+
+.delete-button {
+    margin-top: 10px; /* Space between other buttons and delete button */
+    padding: 5px 10px;
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}

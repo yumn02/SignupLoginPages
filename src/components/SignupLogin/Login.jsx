@@ -12,7 +12,7 @@ const Login = () => {
 
     if (user) {
       if (user.email === email && user.password === password) {
-        navigate('/welcome'); 
+        navigate('/main'); // Change to '/main' to lead to MainPage
       } else {
         alert('Invalid credentials. Please try again.');
       }

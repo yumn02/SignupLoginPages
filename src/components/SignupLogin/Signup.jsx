@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Signup.css';
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSignUp = () => {
-    const email = document.getElementById('signup-email').value;
-    const password = document.getElementById('signup-password').value;
+    if (!email.includes('@') || !email.endsWith('.com')) {
+      alert('Please enter a valid email');
+      return;
+    }
+
+    // Password validation
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      alert('Password must be at least 8 characters long, contain at least one uppercase letter and one number.');
+      return;
+    }
 
     if (email && password) {
       localStorage.setItem('user', JSON.stringify({ email, password }));
@@ -26,11 +37,23 @@ const Signup = () => {
       <div className='inputs'>
         <div className='input'>
           <label>Email: </label>
-          <input id='signup-email' type='email' placeholder='example@gmail.com' />
+          <input
+            id='signup-email'
+            type='email'
+            placeholder='example@gmail.com'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div className='input'>
           <label>Password: </label>
-          <input id='signup-password' type='password' placeholder='*************' />
+          <input
+            id='signup-password'
+            type='password'
+            placeholder='*************'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
       </div>
       <div className='submit-container'>
